@@ -66,7 +66,7 @@ if(option == 'All'):
                 kasus = pd.read_excel(excel_file, sheet_name=sheet_name2, 
                                             engine="openpyxl", usecols='A:D')
                     # st.bar_chart(df, x="Tahun", y="Kejahatan")
-                st.line_chart(kasus, x='Kasus', y=['2020', '2021', '2022'])
+                st.bar_chart(kasus, x='Kasus', y=['2020', '2021', '2022'])
 
             with c2:
                 
@@ -121,7 +121,7 @@ if(option == 'All'):
                         
                     with c6:
 
-                        c6.subheader("Korban Kekerasan Terhadap Perempuan di Provinsi Sumatera Barat Tahun 2020")
+                        c6.subheader("Persentase Korban Kekerasan Terhadap Perempuan di Provinsi Sumatera Barat Tahun 2020")
                         df = pd.read_excel(excel_file, sheet_name=sheet_name1,
                                     engine="openpyxl", usecols='A:S')
 
@@ -153,7 +153,7 @@ if(option == 'All'):
                         
                     with c10:
 
-                        c10.subheader("Korban Kekerasan Terhadap Perempuan di Provinsi Sumatera Barat Tahun 2021")
+                        c10.subheader("Persentase Korban Kekerasan Terhadap Perempuan di Provinsi Sumatera Barat Tahun 2021")
                         df = pd.read_excel(excel_file, sheet_name=sheet_name1,
                                     engine="openpyxl", usecols='A:O')
 
@@ -188,7 +188,7 @@ if(option == 'All'):
                             
                         with c14:
 
-                            c14.subheader("Korban Kekerasan Terhadap Perempuan di Provinsi Sumatera Barat Tahun 2022")
+                            c14.subheader("Persentase Korban Kekerasan Terhadap Perempuan di Provinsi Sumatera Barat Tahun 2022")
                             df = pd.read_excel(excel_file, sheet_name=sheet_name2,
                                         engine="openpyxl", usecols='A:S')
 

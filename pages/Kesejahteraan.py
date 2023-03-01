@@ -55,19 +55,16 @@ if(option == 'All'):
             c3, c4 = st.columns(2)
             c5, c6 = st.columns(2)
             with c1:
-                c1.subheader("Upah Minimum Provinsi Sumatera Barat Dari Tahun Ke Tahun")
-                df = pd.read_excel(excel_file, sheet_name=sheet_name2, 
-                                            engine="openpyxl", usecols='A:B')
-                    # st.bar_chart(df, x="Tahun", y="UMP")
+                # c1.subheader("Upah Minimum Provinsi Sumatera Barat Dari Tahun Ke Tahun")
+                # df = pd.read_excel(excel_file, sheet_name=sheet_name2, 
+                #                             engine="openpyxl", usecols='A:B')
+                #     # st.bar_chart(df, x="Tahun", y="UMP")
 
-                c1.vega_lite_chart(df, {
-                    'mark': {'type': 'bar', 'tooltip': True},
-                    'encoding': {
-                        'x': {'field': 'Tahun', 'type': 'ordinal'},
-                        'y': {'field': 'UMP', 'type': 'quantitative'},
-                        'color': {'field': 'Tahun'},
-                    },
-                    }) 
+                c1.subheader("Upah Minimum Provinsi Sumatera Barat")
+                upah = pd.read_excel(excel_file, sheet_name=sheet_name2, 
+                                            engine="openpyxl", usecols='A:D')
+                    # st.bar_chart(df, x="Tahun", y="Kejahatan")
+                st.line_chart(upah, x='Tahun', y=['UMP'])
 
             with c2:
                         st.metric("UMP Sumbar Tahun 2023", "2.742.467", "229.928")
@@ -102,7 +99,9 @@ if(option == 'All'):
                 c6.subheader("Perbandingan Total Pencari Kerja dan Jumlah Lowongan Kerja di tahun 2022")
                 st.bar_chart(filtered_kategori_2021, x="Kabupaten_Kota", y=['Total_Pencari_Kerja22', 'Jumlah_Lowongan_Kerja_Terdaftar_2022'])
 
+    
 elif(option == 'Daerah'):
+    st.write('Data Tenaga Kerja Berdasarkan Daerah')
     wilayah = df['Kabupaten_Kota'].unique().tolist()
     wilayah_selection = st.selectbox('Pilih Daerah : ', wilayah)
     m1, m2 = st.columns((1, 1))
@@ -118,7 +117,9 @@ elif(option == 'Daerah'):
     totallk = df['Pencari_Kerja_Terdaftar(L)22'].sum()
     
 
+    
     with m1:
+
         m1.metric(label ='Jumlah Pencari Kerja Laki-Laki 2022 ',value = int(to['Pencari_Kerja_Terdaftar(L)22']), delta= laki2)
         m1.metric(label ='Jumlah Pencari Kerja Laki-Laki se-Provinsi Sumbar 2022',value = totallk)
     with m2:
@@ -126,34 +127,34 @@ elif(option == 'Daerah'):
          m2.metric(label ='Jumlah Pencari Kerja Perempuan se-Provinsi Sumbar 2022',value = totalpr)
    
     
-    # ----- MANIPULATION for Man -----
-    # ===== List for Values =====
-    single_row_df = to[0:1]
-    listValueskategori = []
-    list_from_df_fungsional2 = single_row_df.values.tolist()[0]
-    for i in range(2, 4):
-        listValueskategori.append(list_from_df_fungsional2[i])
-    # ----- END OF MANIPULATION -----
-    # ===== Show Bar Chart =====
-    wilayah_kategori = pd.DataFrame({
-        'Value': listValueskategori
-    }, index=['2021', '2022'])
-    st.subheader("Perubahan Laki-Laki")
-    st.line_chart(wilayah_kategori,  y='Value', use_container_width=True)
-      # ----- MANIPULATION for Man -----
-    # ===== List for Values =====
-    single_row_df = to[0:1]
-    listValueskategori = []
-    list_from_df_fungsional2 = single_row_df.values.tolist()[0]
-    for i in range(5, 7):
-        listValueskategori.append(list_from_df_fungsional2[i])
-    # ----- END OF MANIPULATION -----
-    # ===== Show Bar Chart =====
-    wilayah_kategori = pd.DataFrame({
-        'Value': listValueskategori
-    }, index=['2021', '2022'])
-    st.subheader("Perubahan Perempuan")
-    st.line_chart(wilayah_kategori,  y='Value', use_container_width=True)
+    # # ----- MANIPULATION for Man -----
+    # # ===== List for Values =====
+    # single_row_df = to[0:1]
+    # listValueskategori = []
+    # list_from_df_fungsional2 = single_row_df.values.tolist()[0]
+    # for i in range(2, 4):
+    #     listValueskategori.append(list_from_df_fungsional2[i])
+    # # ----- END OF MANIPULATION -----
+    # # ===== Show Bar Chart =====
+    # wilayah_kategori = pd.DataFrame({
+    #     'Value': listValueskategori
+    # }, index=['2021', '2022'])
+    # st.subheader("Perubahan Laki-Laki")
+    # st.line_chart(wilayah_kategori,  y='Value', use_container_width=True)
+    #   # ----- MANIPULATION for Man -----
+    # # ===== List for Values =====
+    # single_row_df = to[0:1]
+    # listValueskategori = []
+    # list_from_df_fungsional2 = single_row_df.values.tolist()[0]
+    # for i in range(5, 7):
+    #     listValueskategori.append(list_from_df_fungsional2[i])
+    # # ----- END OF MANIPULATION -----
+    # # ===== Show Bar Chart =====
+    # wilayah_kategori = pd.DataFrame({
+    #     'Value': listValueskategori
+    # }, index=['2021', '2022'])
+    # st.subheader("Perubahan Perempuan")
+    # st.line_chart(wilayah_kategori,  y='Value', use_container_width=True)
 
 
 

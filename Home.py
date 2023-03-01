@@ -13,11 +13,7 @@ st.set_page_config(page_title='Home', page_icon=':bar_chart:', layout='wide')
 # st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
 # Layout
-st.title('DIVISI PST BPS PROVINSI SUMATERA BARAT ') 
-st.title('⭐ Overview')
-st.write('Badan Pusat Statistik adalah Lembaga Pemerintah Non Kementerian yang bertanggung jawab langsung kepada Presiden. Pada perusahaan BPS dibagi menjadi beberapa divisi/bidang. Salah satu divisi di Badan Pusat Statistik adalah Divisi Sumber Daya Manusia (SDM) dan Hukum. Dimana Divisi SDM dan Hukum ini bertamggung jawab terhadap urusan kepegawaian dan aturan bagi pegawai di Badan Pusat Statistik.')
-
-
+st.title('DIVISI IPDS BPS PROVINSI SUMATERA BARAT ') 
 st.write('Untuk memberikan informasi yang lebih interaktif untuk menampilkan data Sumatera Barat Dalam Angka, diajukan sebuah pemecahan masalah berupa rancangan Dashboard. Dashboard merupakan sebuah tampilan visual dari informasi penting yang dibutuhkan untuk tercapainya suatu tujuan, digabungkan dan diatur pada sebuah layar yang menghasilkan informasi yang dibutuhkan dan didapat secara sekilas. Tampilan visual disini didefinisikan bahwa penyajian informasi harus dirancang sebaik mungkin, sehingga memudahkan pengguna untuk menangkap informasi secara cepat dan memahami maknanya secara benar.')
 
 st.title('⭐ Metode  ')
